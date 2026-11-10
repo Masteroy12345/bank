@@ -1,0 +1,102 @@
+[
+  {
+    "code": "ewo",
+    "name": "Ewondo",
+    "family": "Bantu",
+    "regions": ["Centre", "Sud"],
+    "stage": "ressources_publiques_a_evaluer",
+    "translation_data": "Corpus Ewondo–français répertorié par l’IADH; pas encore intégré ni validé pour la banque.",
+    "speech_data": "Ressources TTS et ASR répertoriées par l’IADH; licence et conditions à vérifier avant réutilisation.",
+    "sources": ["https://community.mozilladatacollective.com/building-an-african-voice-for-ai-inside-the-institute-of-african-digital-humanities/"]
+  },
+  {
+    "code": "fub",
+    "name": "Fulfulde Adamawa",
+    "family": "Atlantique-Congo",
+    "regions": ["Adamaoua", "Nord", "Extrême-Nord"],
+    "stage": "ressources_publiques_a_evaluer",
+    "translation_data": "Corpus parallèle Adamawa Fulfulde–français répertorié par l’IADH.",
+    "speech_data": "Langue lancée sur Common Voice; corpus oral à vérifier par variété et licence.",
+    "sources": ["https://community.mozilladatacollective.com/building-an-african-voice-for-ai-inside-the-institute-of-african-digital-humanities/"]
+  },
+  {
+    "code": "bax",
+    "name": "Bamoun (Shüpamom)",
+    "family": "Bantoïde méridional",
+    "regions": ["Ouest"],
+    "stage": "ressources_publiques_a_evaluer",
+    "translation_data": "Corpus Bamoun–français répertorié par l’IADH.",
+    "speech_data": "Corpus TTS Bamoun répertorié par l’IADH; licence et couverture dialectale à vérifier.",
+    "sources": ["https://community.mozilladatacollective.com/building-an-african-voice-for-ai-inside-the-institute-of-african-digital-humanities/"]
+  },
+  {
+    "code": "bum",
+    "name": "Bulu",
+    "family": "Bantu",
+    "regions": ["Sud", "Centre"],
+    "stage": "ressources_publiques_a_evaluer",
+    "translation_data": "Données multimodales et gloses françaises répertoriées par l’IADH.",
+    "speech_data": "Corpus TTS Bulu répertorié par l’IADH.",
+    "sources": ["https://community.mozilladatacollective.com/building-an-african-voice-for-ai-inside-the-institute-of-african-digital-humanities/"]
+  },
+  {
+    "code": "bas",
+    "name": "Basaa",
+    "family": "Bantu",
+    "regions": ["Littoral", "Centre", "Sud"],
+    "stage": "ressources_publiques_a_evaluer",
+    "translation_data": "Données ALCAM avec gloses françaises répertoriées par l’IADH; ce n’est pas encore un catalogue bancaire validé.",
+    "speech_data": "Ressource multimodale avec audio et transcriptions phonétiques répertoriée par l’IADH.",
+    "sources": ["https://community.mozilladatacollective.com/building-an-african-voice-for-ai-inside-the-institute-of-african-digital-humanities/"]
+  },
+  {
+    "code": "eto",
+    "name": "Eton",
+    "family": "Bantu",
+    "regions": ["Centre"],
+    "stage": "ressources_publiques_a_evaluer",
+    "translation_data": "Aucun corpus bancaire validé repéré dans cette première sélection.",
+    "speech_data": "Un corpus Eton-TTS est répertorié dans Mozilla Data Collective; accès et licence à vérifier.",
+    "sources": ["https://mozilladatacollective.com/datasets/cmrbac56k00lbmm070txylq42", "https://aclanthology.org/2025.computel-main.9.pdf"]
+  },
+  {
+    "code": "tui",
+    "name": "Tupuri",
+    "family": "Adamawa-Oubanguien",
+    "regions": ["Extrême-Nord"],
+    "stage": "ressources_publiques_a_evaluer",
+    "translation_data": "Aucun corpus bancaire validé repéré dans cette première sélection.",
+    "speech_data": "Un corpus Tupuri-ASR est répertorié dans Mozilla Data Collective; dialectes et licence à vérifier.",
+    "sources": ["https://mozilladatacollective.com/datasets/cmq9hy15t02jpl207wlcqfpxh", "https://aclanthology.org/2025.computel-main.9.pdf"]
+  },
+  {
+    "code": "bfd",
+    "name": "Bafut",
+    "family": "Bantoïde méridional",
+    "regions": ["Nord-Ouest"],
+    "stage": "collecte_a_completer",
+    "translation_data": "Pas de corpus financier validé intégré; construire un corpus communautaire.",
+    "speech_data": "Langue annoncée parmi les langues lancées sur Common Voice; vérifier le jeu téléchargeable et sa licence avant usage.",
+    "sources": ["https://community.mozilladatacollective.com/building-an-african-voice-for-ai-inside-the-institute-of-african-digital-humanities/"]
+  },
+  {
+    "code": "bbj",
+    "name": "Ghomala’",
+    "family": "Bantoïde méridional",
+    "regions": ["Ouest"],
+    "stage": "collecte_a_completer",
+    "translation_data": "Pas de corpus financier validé intégré; construire un corpus communautaire.",
+    "speech_data": "Langue annoncée parmi les langues lancées sur Common Voice; vérifier le jeu téléchargeable et sa licence avant usage.",
+    "sources": ["https://community.mozilladatacollective.com/building-an-african-voice-for-ai-inside-the-institute-of-african-digital-humanities/"]
+  },
+  {
+    "code": "byv",
+    "name": "Medumba",
+    "family": "Bantoïde méridional",
+    "regions": ["Ouest"],
+    "stage": "collecte_a_completer",
+    "translation_data": "Pas de corpus financier validé intégré; construire un corpus communautaire.",
+    "speech_data": "Langue annoncée parmi les langues lancées sur Common Voice; vérifier le jeu téléchargeable et sa licence avant usage.",
+    "sources": ["https://community.mozilladatacollective.com/building-an-african-voice-for-ai-inside-the-institute-of-african-digital-humanities/"]
+  }
+]

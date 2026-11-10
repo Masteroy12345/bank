@@ -1,0 +1,26 @@
+# Secrets d’environnement — ne jamais versionner une clé Appwrite
+.env
+.env.*
+!.env.example
+**/.env
+**/.env.*
+!**/.env.example
+
+# Données locales et contributions audio potentiellement identifiantes
+api/data/safinum.sqlite3*
+api/data/audio/*
+!api/data/audio/.gitkeep
+
+# Environnements Python et caches
+**/.venv/
+**/__pycache__/
+*.py[cod]
+
+# Flutter/Dart build output
+**/.dart_tool/
+**/build/
+**/coverage/
+**/.flutter-plugins
+**/.flutter-plugins-dependencies
+
+.DS_Store

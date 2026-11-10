@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0c6b4d">
+  <meta name="description" content="Prototype SAFINUM : API linguistique et banque de démonstration bilingue FR/EN pour tester l’inclusion financière au Cameroun.">
+  <title data-i18n="app_name">SAFINUM — Banque démo</title>
+  <link rel="stylesheet" href="/static/styles.css">
+  <script defer src="/static/app.js"></script>
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="rail" aria-label="Navigation principale" data-i18n-aria-label="nav_label">
+      <a class="brand-mark" href="#home" aria-label="SAFINUM, accueil" data-i18n-aria-label="brand_home">
+        <span class="brand-symbol" aria-hidden="true"><svg viewBox="0 0 28 28"><path d="M4 14.2 11.1 21 24 7"/><path d="M4 8.2 9.8 13.8"/></svg></span>
+        <span class="brand-word">safinum<span>.</span></span>
+      </a>
+      <nav class="rail-nav">
+        <a href="#home" class="rail-link is-active"><span class="nav-icon" aria-hidden="true">⌂</span><span data-i18n="nav_home">Accueil</span></a>
+        <a href="#activity" class="rail-link"><span class="nav-icon" aria-hidden="true">↗</span><span data-i18n="nav_history">Activité</span></a>
+        <a href="#language" class="rail-link"><span class="nav-icon" aria-hidden="true">◉</span><span data-i18n="nav_language">Langue</span><span class="nav-dot"></span></a>
+        <a href="#help" class="rail-link"><span class="nav-icon" aria-hidden="true">?</span><span data-i18n="nav_help">Aide</span></a>
+      </nav>
+      <div class="rail-bottom">
+        <div class="profile-avatar" aria-hidden="true">A</div>
+        <div class="profile-copy"><strong>Alex M.</strong><span data-i18n="test_account">Compte test</span></div>
+        <button class="icon-button" type="button" aria-label="Options du profil" data-i18n-aria-label="profile_options">···</button>
+      </div>
+    </aside>
+
+    <main id="home" class="main-content">
+      <header class="topbar">
+        <div class="mobile-brand"><span class="brand-symbol" aria-hidden="true"><svg viewBox="0 0 28 28"><path d="M4 14.2 11.1 21 24 7"/><path d="M4 8.2 9.8 13.8"/></svg></span><span class="brand-word">safinum<span>.</span></span></div>
+        <div class="topbar-spacer"></div>
+        <div class="demo-status"><span class="status-pulse"></span><span data-i18n="demo_badge">SIMULATION · AUCUNE OPÉRATION RÉELLE</span></div>
+        <div class="language-switch" role="group" aria-label="Langue de l’interface" data-i18n-aria-label="interface_language">
+          <button type="button" class="lang-button is-selected" data-locale="fr" aria-pressed="true">FR</button>
+          <button type="button" class="lang-button" data-locale="en" aria-pressed="false">EN</button>
+        </div>
+        <button class="top-avatar" type="button" aria-label="Profil de démonstration" data-i18n-aria-label="profile_demo">A</button>
+      </header>
+      <div class="content-wrap">
+        <section class="welcome-row" aria-labelledby="welcome-title">
+          <div>
+            <div class="eyebrow"><span class="eyebrow-line"></span> <span data-i18n="app_eyebrow">SAFINUM FINANCE · VERSION DE TEST</span></div>
+            <h1 id="welcome-title" data-i18n="welcome">Bonjour, Alex</h1>
+            <p class="muted" data-i18n="welcome_subtitle">Voici votre espace financier.</p>
+          </div>
+          <div class="date-chip"><span aria-hidden="true">◷</span> <span data-i18n="today">Aujourd’hui</span> · <span data-i18n="date_label">10 nov. 2026</span></div>
+        </section>
+
+        <section class="overview-grid" aria-label="Résumé du compte de démonstration" data-i18n-aria-label="overview_label">
+          <article class="balance-card">
+            <div class="balance-topline"><span data-i18n="balance_label">Solde disponible</span><span class="balance-icon" aria-hidden="true">◌</span></div>
+            <div class="balance-amount"><span>125 000</span><small>XAF</small></div>
+            <div class="balance-foot"><span class="balance-account" data-i18n="balance_account">Compte principal · XAF</span><span class="secure-chip"><span>●</span> <span data-i18n="demo_account">Compte démo</span></span></div>
+            <div class="balance-decoration" aria-hidden="true"><span></span><span></span><span></span></div>
+          </article>
+          <article class="quick-card">
+            <div class="section-heading"><div><p class="eyebrow" data-i18n="quick_transfer_title">Transfert rapide</p><p class="muted small" data-i18n="quick_transfer_desc">Essayez un transfert fictif, sans débit réel.</p></div><span class="quick-icon" aria-hidden="true">↗</span></div>
+            <form id="transfer-form" class="transfer-form">
+              <label><span data-i18n="recipient_label">Bénéficiaire</span><input id="recipient" autocomplete="off" maxlength="50" data-i18n-placeholder="recipient_placeholder" placeholder="Nom ou numéro de téléphone fictif" required></label>
+              <label><span data-i18n="amount_label">Montant</span><div class="amount-field"><input id="amount" inputmode="numeric" type="number" min="1" max="125000" step="1" data-i18n-placeholder="amount_placeholder" placeholder="Ex. 5 000" required><span>XAF</span></div></label>
+              <button class="button primary full-button" type="submit"><span data-i18n="confirm_transfer">Simuler le transfert</span><span aria-hidden="true">→</span></button>
+            </form>
+            <p class="form-note"><span aria-hidden="true">ⓘ</span> <span data-i18n="transfer_notice">Aucune transaction n’est envoyée à un opérateur.</span></p>
+            <div id="transfer-message" class="inline-message" role="status" aria-live="polite"></div>
+          </article>
+        </section>
+
+        <section id="activity" class="transactions-card" aria-labelledby="transactions-title">
+          <div class="card-title-row"><div><p class="eyebrow" data-i18n="account_label">VOTRE COMPTE · #•• 0462</p><h2 id="transactions-title" data-i18n="transactions">Opérations récentes</h2></div><button class="text-button" type="button" data-i18n="see_all">Tout voir</button></div>
+          <div class="transaction-list">
+            <article class="transaction-row"><span class="transaction-icon received" aria-hidden="true">↙</span><div class="transaction-info"><strong data-i18n="transaction_received">Transfert reçu · Mireille N.</strong><span data-i18n="today">Aujourd’hui</span></div><strong class="transaction-amount positive">+ 12 500 <small>XAF</small></strong></article>
+            <article class="transaction-row"><span class="transaction-icon bill" aria-hidden="true">▤</span><div class="transaction-info"><strong data-i18n="transaction_school">Paiement de facture · Électricité</strong><span data-i18n="yesterday">Hier</span></div><strong class="transaction-amount">− 18 000 <small>XAF</small></strong></article>
+            <article class="transaction-row"><span class="transaction-icon cash" aria-hidden="true">↗</span><div class="transaction-info"><strong data-i18n="transaction_withdrawal">Retrait · Agence centrale</strong><span data-i18n="date_previous">08 nov. 2026</span></div><strong class="transaction-amount">− 10 000 <small>XAF</small></strong></article>
+          </div>
+          <div class="activity-footer"><span class="tiny-shield">◇</span> <span data-i18n="test_data_note">Les montants affichés sont des données de test.</span></div>
+        </section>
+
+        <section id="language" class="language-section" aria-labelledby="language-title">
+          <div class="section-intro">
+            <div><p class="eyebrow" data-i18n="api_module_label">MODULE API · TEXTE + VOIX</p><h2 id="language-title" data-i18n="language_title">Langue & voix</h2><p class="muted" data-i18n="local_language_ready">Interface bilingue de démonstration active. Les phrases locales restent en revue communautaire.</p></div>
+            <div class="language-count"><strong>10</strong><span data-i18n="language_count">langues pilotes</span></div>
+          </div>
+          <div id="local-status" class="notice-banner" role="status"><span class="notice-icon" aria-hidden="true">i</span><span data-i18n="local_language_status">La traduction bancaire de cette langue est en collecte et doit être relue par des locuteurs avant publication.</span></div>
+
+          <div class="language-grid">
+            <article class="tool-card api-card">
+              <div class="tool-card-heading"><span class="tool-icon green-icon" aria-hidden="true">⇄</span><div><h3 data-i18n="api_title">Test de la couche linguistique</h3><p data-i18n="api_desc">Essayez une phrase de l’application. Les montants, devises et chiffres ne sont jamais réécrits.</p></div></div>
+              <div class="field-stack">
+                <label><span data-i18n="language_choice">Langue d’affichage</span><select id="local-language"></select></label>
+                <label><span data-i18n="collect_source">Phrase source</span><select id="test-phrase"></select></label>
+                <div class="result-preview"><span class="preview-label" data-i18n="api_result_label">Résultat API</span><p id="api-output" aria-live="polite">Sélectionnez une phrase puis lancez le test.</p></div>
+                <button id="test-translate" class="button dark-button" type="button"><span data-i18n="test_api">Tester la traduction</span><span aria-hidden="true">→</span></button>
+                <p id="api-status" class="api-status" aria-live="polite"></p>
+              </div>
+            </article>
+
+            <article class="tool-card contribution-card">
+              <div class="tool-card-heading"><span class="tool-icon orange-icon" aria-hidden="true">✎</span><div><h3 data-i18n="collect_title">Contribuer une traduction</h3><p data-i18n="collect_desc">Proposez une traduction de test. Elle ne sera pas affichée aux clients avant validation.</p></div></div>
+              <form id="contribution-form" class="field-stack">
+                <label><span data-i18n="collect_source">Phrase source</span><select id="contribution-phrase"></select></label>
+                <label><span data-i18n="collect_target">Votre traduction</span><textarea id="translation-input" rows="2" maxlength="600" data-i18n-placeholder="collect_target_placeholder" placeholder="Écrivez la traduction dans la langue choisie" required></textarea></label>
+                <div class="two-fields">
+                  <label><span data-i18n="dialect_label">Variété ou dialecte (facultatif)</span><input id="dialect-input" maxlength="120" data-i18n-placeholder="dialect_placeholder" placeholder="Ex. région, localité ou variété"></label>
+                  <label><span data-i18n="speaker_role_label">Votre connaissance de cette langue</span><select id="speaker-role"><option value="native" data-i18n="speaker_role_native">Locuteur natif / natif</option><option value="fluent" data-i18n="speaker_role_fluent">Locuteur fluent</option></select></label>
+                </div>
+                <label class="consent-check"><input id="translation-consent" type="checkbox" required><span data-i18n="consent_text">J’accepte l’enregistrement de cette proposition pour la revue linguistique. Je n’inclus aucune donnée bancaire réelle.</span></label>
+                <button class="button outline-button" type="submit"><span data-i18n="submit_translation">Envoyer pour revue</span><span aria-hidden="true">→</span></button>
+                <p id="contribution-status" class="api-status" role="status" aria-live="polite"></p>
+              </form>
+            </article>
+
+            <article class="tool-card voice-card">
+              <div class="tool-card-heading"><span class="tool-icon blue-icon" aria-hidden="true">♫</span><div><h3 data-i18n="voice_title">Collecte audio & prononciation</h3><p data-i18n="voice_desc">Enregistrez la phrase affichée dans la langue sélectionnée. L’audio reste en attente de revue.</p></div></div>
+              <div class="voice-demo-row"><div class="voice-wave" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><div><span class="preview-label" data-i18n="demo_phrase">PHRASE DE TEST</span><p id="voice-source-text">Voici votre espace financier.</p></div></div>
+              <div class="record-actions"><button id="record-button" class="button outline-button" type="button"><span data-i18n="record_start">Démarrer l’enregistrement</span><span aria-hidden="true">●</span></button><button id="upload-audio" class="button dark-button" type="button" disabled><span data-i18n="record_upload">Envoyer l’audio pour revue</span><span aria-hidden="true">↑</span></button></div>
+              <label class="consent-check audio-consent"><input id="audio-consent" type="checkbox"><span data-i18n="audio_consent">J’accepte de partager cet extrait audio pour la revue linguistique.</span></label>
+              <audio id="audio-preview" controls hidden></audio>
+              <div class="pronunciation-row"><div><strong data-i18n="approved_pronunciation">Prononciation validée</strong><p id="audio-status" data-i18n="audio_waiting">Aucun extrait de prononciation validé n’est encore disponible pour cette phrase.</p></div><button id="play-approved" class="round-button" type="button" aria-label="Lire un extrait de prononciation validé" data-i18n-aria-label="play_pronunciation">▶</button></div>
+              <p id="voice-message" class="api-status" role="status" aria-live="polite"></p>
+            </article>
+          </div>
+        </section>
+
+        <section id="help" class="help-card"><span class="help-mark" aria-hidden="true">?</span><div><h2 data-i18n="help_title">Comment ça marche</h2><p data-i18n="help_body">Les traductions françaises et anglaises de cette démo sont explicites. Les langues camerounaises sont ouvertes à la collecte, sans traduction financière automatique tant qu’une communauté ne l’a pas vérifiée.</p></div><a href="/docs" target="_blank" rel="noreferrer"><span data-i18n="api_docs_link">Documentation API</span> ↗</a></section>
+        <footer class="page-footer"><span data-i18n="footer_brand">© SAFINUM · Prototype de hackathon</span><span data-i18n="footer_note">Démo de hackathon · comptes, noms, montants et opérations entièrement fictifs</span></footer>
+      </div>
+    </main>
+  </div>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+</body>
+</html>

@@ -1,0 +1,49 @@
+import 'dart:async';
+
+import 'package:dartz/dartz.dart';
+import 'package:spending_pal/src/core/common/common.dart';
+import 'package:spending_pal/src/core/transaction/domain.dart';
+
+abstract class TransactionRepository implements Syncable {
+  // Create
+  Future<Either<TransactionFailure, Unit>> addTransaction(Transaction transaction);
+
+  // Read
+  Stream<Either<TransactionFailure, List<Transaction>>> watchTransactions({
+    String? categoryId,
+    DateTime? startDate,
+    DateTime? endDate,
+    TransactionType? type,
+  });
+
+  Future<Either<TransactionFailure, Transaction>> getTransactionById(String id);
+
+  // Update
+  Future<Either<TransactionFailure, Unit>> updateTransaction(Transaction transaction);
+
+  // Delete
+  Future<Either<TransactionFailure, Unit>> deleteTransaction(String id);
+
+  // Stats
+  Future<Either<TransactionFailure, double>> getTotalByCategory({
+    required String categoryId,
+    DateTime? startDate,
+    DateTime? endDate,
+  });
+
+  Future<Either<TransactionFailure, Map<TransactionType, double>>> getMonthlyTotals({
+    required DateTime month,
+  });
+
+  Stream<Map<String, int>> watchTransactionCountsByCategory({
+    required DateTime startDate,
+    required DateTime endDate,
+  });
+
+  Stream<Either<TransactionFailure, Map<TransactionType, double>>> watchMonthlyTotals({
+    required DateTime month,
+  });
+
+  @override
+  Future<Either<TransactionFailure, Unit>> sync();
+}
