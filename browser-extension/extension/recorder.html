@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Enregistrement des mots</title>
+  <style>
+    :root { --fg: #111827; --muted: #4b5563; --line: #d1d5db; --bg: #fff; --accent: #1d4ed8; --rec: #b91c1c; --ok: #15803d; }
+    body { margin: 0; padding: 24px 16px; font: 15px/1.45 system-ui, sans-serif; color: var(--fg); background: var(--bg); }
+    main { max-width: 960px; margin: 0 auto; }
+    h1 { font-size: 22px; margin: 0 0 8px; }
+    .intro { color: var(--muted); max-width: 70ch; }
+    .bar { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; margin: 16px 0; }
+    select, button { font: inherit; }
+    select { padding: 6px; border: 1px solid #9ca3af; border-radius: 6px; }
+    button { padding: 6px 10px; border: 1px solid #9ca3af; border-radius: 6px; background: #f9fafb; cursor: pointer; min-height: 36px; }
+    button:disabled { opacity: .45; cursor: default; }
+    button.rec { border-color: var(--rec); color: var(--rec); }
+    button.rec.on { background: var(--rec); color: #fff; }
+    :focus-visible { outline: 3px solid #00BFFF; outline-offset: 2px; }
+    table { width: 100%; border-collapse: collapse; }
+    th, td { text-align: left; padding: 8px 6px; border-bottom: 1px solid var(--line); vertical-align: top; }
+    th { font-size: 13px; color: var(--muted); }
+    td.id { font: 13px ui-monospace, monospace; color: var(--muted); white-space: nowrap; }
+    td.tr { font-weight: 600; }
+    td.act { white-space: nowrap; }
+    td.act button { margin: 0 2px 4px 0; }
+    .ok { color: var(--ok); font-size: 13px; }
+    .steps { background: #f3f4f6; border-radius: 8px; padding: 12px 16px; max-width: 70ch; }
+    @media (max-width: 640px) { td.fr { display: none; } th.fr { display: none; } }
+  </style>
+</head>
+<body>
+<main>
+  <h1>🎙 Enregistrement des mots</h1>
+  <p class="intro">Page destinée aux locuteurs natifs. Chaque mot ou phrase traduit peut être enregistré avec sa vraie prononciation. Les enregistrements restent sur cet ordinateur : rien n'est envoyé sur Internet.</p>
+  <div class="steps">
+    <strong>Comment faire</strong>
+    <ol>
+      <li>Choisir la langue.</li>
+      <li>Pour chaque ligne : ⏺ Enregistrer, lire le texte en gras, puis ⏹ Arrêter. Réécouter avec ▶.</li>
+      <li>Cliquer sur ⬇ pour enregistrer le fichier (nom : <code>&lt;id&gt;.webm</code>).</li>
+      <li>Placer les fichiers dans <code>extension/audio/&lt;langue&gt;/</code>, relancer <code>python3 extension/tools/build_dictionary.py</code> puis recharger l'extension.</li>
+    </ol>
+  </div>
+  <div class="bar">
+    <label for="lang"><strong>Langue</strong></label>
+    <select id="lang"></select>
+    <label><input type="checkbox" id="todo"> Seulement les mots non enregistrés</label>
+    <span id="count" role="status" aria-live="polite"></span>
+  </div>
+  <p class="intro" id="notice" role="status" aria-live="polite"></p>
+  <table>
+    <thead><tr><th>Id</th><th class="fr">Français</th><th>Texte à lire</th><th>Actions</th></tr></thead>
+    <tbody id="rows"></tbody>
+  </table>
+</main>
+<script src="dictionary.js"></script>
+<script src="recorder_items.js"></script>
+<script src="recorder.js"></script>
+</body>
+</html>

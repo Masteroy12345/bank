@@ -9,7 +9,12 @@ Ce dépôt sépare l’application Flutter issue de [`yohanangulo/spending-pal`]
 ```text
 app/    Application Flutter basée sur SpendingPal
 api/    API FastAPI SAFINUM, interface web, USSD simulé et collecte
+browser-extension/ Extension navigateur SAFINUM, autonome et documentée
 ```
+
+## Extension navigateur
+
+Le sous-projet `browser-extension/` est séparé de `app/` et `api/`; il ne modifie ni l’authentification Firebase de l’application mobile ni la configuration Appwrite de l’API. Il expose 13 choix de langue dans l’extension; seules les trois langues historiques ont des traductions, encore à valider. Les dix autres restent en attente de traductions et d’une revue par des locuteurs locaux. La synthèse refuse les voix françaises/anglaises de remplacement; aucun échantillon de phrase n’a été généré sans validation locale. Voir `browser-extension/README.md` et `browser-extension/docs/AUDIO_ET_LIMITES.md` pour les ressources, licences et résultats de test.
 
 ## API SAFINUM
 

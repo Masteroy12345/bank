@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <title>Safinum Lingua</title>
+  <style>
+    body { width: 320px; margin: 0; padding: 16px; font: 14px/1.4 system-ui, sans-serif; color: #111827; background: #fff; }
+    h1 { font-size: 16px; margin: 0 0 12px; }
+    label { display: block; margin: 10px 0 4px; font-weight: 600; }
+    select, input[type=password] { width: 100%; box-sizing: border-box; padding: 6px; font: inherit; border: 1px solid #9ca3af; border-radius: 6px; }
+    button { padding: 6px 8px; font: inherit; border: 1px solid #9ca3af; border-radius: 6px; background: #f9fafb; cursor: pointer; }
+    .row { display: flex; gap: 8px; align-items: flex-start; margin-top: 10px; }
+    .row label { margin: 0; font-weight: 400; }
+    :focus-visible { outline: 3px solid #00BFFF; outline-offset: 2px; }
+    .note { font-size: 12px; color: #4b5563; margin-top: 6px; }
+    #keybox[hidden], #voicebox[hidden] { display: none; }
+    kbd { font: 12px ui-monospace, monospace; border: 1px solid #9ca3af; border-radius: 4px; padding: 0 3px; }
+    a { color: #1d4ed8; }
+  </style>
+</head>
+<body>
+  <h1>🌍 Safinum Lingua</h1>
+
+  <label for="lang">Langue</label>
+  <select id="lang"></select>
+  <p class="note" id="translationinfo" role="status" aria-live="polite"></p>
+
+  <div class="row">
+    <input type="checkbox" id="site">
+    <label for="site">Activer sur <strong id="host">ce site</strong></label>
+  </div>
+
+  <div class="row">
+    <input type="checkbox" id="tooltip">
+    <label for="tooltip">Afficher le texte original au survol</label>
+  </div>
+
+  <div class="row">
+    <input type="checkbox" id="voice">
+    <label for="voice">Lecture vocale : bouton 🔊 au survol, ou <kbd>Alt</kbd>+<kbd>L</kbd></label>
+  </div>
+  <div id="voicebox">
+    <label for="rate">Vitesse de lecture</label>
+    <select id="rate">
+      <option value="0.85">Lente</option>
+      <option value="0.9">Légèrement lente</option>
+      <option value="1">Naturelle</option>
+      <option value="1.1">Rapide</option>
+    </select>
+    <p class="note" id="voiceinfo" role="status" aria-live="polite"></p>
+    <p class="note">Aucune voix française ou anglaise de remplacement n'est utilisée pour une langue locale. La lecture utilise seulement un enregistrement natif déjà présent ou une voix système locale dont le code correspond exactement à la langue. Sinon, l'audio est signalé comme indisponible; aucun texte lu n'est envoyé en ligne.</p>
+    <p class="note"><a href="recorder.html" target="_blank">🎙 Enregistrer les mots (locuteurs natifs)</a></p>
+  </div>
+
+  <div class="row">
+    <input type="checkbox" id="ai">
+    <label for="ai">Traduction IA des messages inédits</label>
+  </div>
+  <div id="keybox">
+    <label for="key">Clé API Claude</label>
+    <input type="password" id="key" autocomplete="off" placeholder="sk-ant-…">
+    <p class="note">Seuls les textes inconnus du dictionnaire sont envoyés, après masquage des chiffres, noms et références. La clé reste sur cet ordinateur.</p>
+  </div>
+
+  <script src="dictionary.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>

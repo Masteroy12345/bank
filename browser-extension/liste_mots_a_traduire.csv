@@ -1,0 +1,142 @@
+﻿id;ecran;francais;anglais;pidgin;fiabilite_pidgin;fulfulde;fiabilite_fulfulde;ewondo;fiabilite_ewondo;makaa;fiabilite_makaa;kanuri;fiabilite_kanuri;arabe_choa;fiabilite_arabe_choa;masa;fiabilite_masa;bafia;fiabilite_bafia;toupouri;fiabilite_toupouri;basaa;fiabilite_basaa;duala;fiabilite_duala;yemba;fiabilite_yemba;mafa;fiabilite_mafa;remarque
+# FIABILITE : H = haute / M = moyenne / B = basse / vide = à traduire par un locuteur natif. TOUT doit être validé avant la démo.;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+"# LANGUES AJOUTEES : les nouvelles colonnes sont volontairement vides; traduction et fiabilite a valider localement par des locuteurs natifs.";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+# --- EN-TETE ET BANDEAU (toutes les pages) ---;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+H01;en-tete;Banque en ligne;Online banking;Bank fo intanet;M;Banki e enternet;M;Banki ya enternet;B;;;;;;;;;;;;;;;;;;;;;sous le nom Safinum Pay
+H02;bandeau;Environnement de test — données fictives, aucune transaction réelle.;Test environment — fictional data, no real transaction.;Test place — all dis tin dem na fo test, no real moni no di move.;M;Nokku ƴeewndo — ko ngam ƴeewde tan, alaa nelde ceede goonga.;M;Esë'é ya fombô — mone ya benya ki.;B;;;;;;;;;;;;;;;;;;;;;
+H03;bandeau;Protocole de test;Test protocol;How fo do di test;M;Laawol ƴeewndo;B;Mbo ya fombô;B;;;;;;;;;;;;;;;;;;;;;lien
+H04;bandeau;Retour au hackathon;Back to hackathon;Go back fo hackathon;H;Rutto e hackathon;M;Kele mbus a hackathon;B;;;;;;;;;;;;;;;;;;;;;lien
+H05;pied de page;Safinum Pay — environnement de démonstration. Ne saisissez aucune donnée personnelle réelle.;Safinum Pay — demonstration environment. Do not enter real personal data.;Safinum Pay — place fo show how e di wok. No put yu real personal tin dem.;M;Safinum Pay — nokku holluki. Taa winndu habaru maa goonga.;M;Safinum Pay — esë'é ya ndegbane. Ke tili mam me wôé me benya.;B;;;;;;;;;;;;;;;;;;;;;garder « Safinum Pay » tel quel
+# --- ETAPES (barre de progression) ---;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+E01;etapes;Solde;Balance;Moni weh e remain;M;Ceede keddiiɗe;M;Mone ma tabe;B;;;;;;;;;;;;;;;;;;;;;
+E02;etapes;Frais;Fees;Charges;M;Njoɓdi;M;Fre;B;;;;;;;;;;;;;;;;;;;;;
+E03;etapes;Bénéficiaire;Beneficiary;Pesin weh go receive;M;Heɓoowo;M;Mod a kos;B;;;;;;;;;;;;;;;;;;;;;
+E04;etapes;Récapitulatif;Summary;Check all tin;M;Ƴeewaa fuu;B;Yen bisë;B;;;;;;;;;;;;;;;;;;;;;
+E05;etapes;Confirmation;Confirmation;Confirm;H;Tabbitinal;M;Ayebe;B;;;;;;;;;;;;;;;;;;;;;
+# --- ETAPE 1 : SOLDE / TABLEAU DE BORD ---;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+S01;solde;Votre compte;Your account;Yu account;H;Konte maa;M;Kônte wôé;B;;;;;;;;;;;;;;;;;;;;;
+S02;solde;Bonjour;Hello;Hello;H;Sannu;M;Mbolo;M;;;;;;;;;;;;;;;;;;;;;affiché « Bonjour, Amina » : ne traduire que « Bonjour »
+S03;solde;Consultez votre solde et lancez un transfert en toute sécurité.;Check your balance and start a secure transfer.;Check yu moni weh e remain, an start fo send moni safe-safe.;M;Ƴeew ceede maa, fuɗɗo nelde ceede e kisal.;M;Yen mone wôé, lôm mone a mvoé.;B;;;;;;;;;;;;;;;;;;;;;
+S04;solde;Solde disponible;Available balance;Moni weh yu fit use;M;Ceede keddiiɗe;M;Mone ma tabe;B;;;;;;;;;;;;;;;;;;;;;
+S05;solde;Numéro de compte;Account number;Account number;H;Limre konte;M;Nombre kônte;B;;;;;;;;;;;;;;;;;;;;;ne pas toucher au numéro qui suit
+S06;solde;Compte courant;Current account;Account fo everyday;M;Konte ceede;B;Kônte mone;B;;;;;;;;;;;;;;;;;;;;;
+S07;solde;Effectuer un transfert;Make a transfer;Send moni;H;Nel ceede;M;Lôm mone;M;;;;;;;;;;;;;;;;;;;;;bouton
+S08;solde;Consulter les frais;View fees;Check di charges;H;Ƴeew njoɓdi;M;Yen fre;B;;;;;;;;;;;;;;;;;;;;;bouton
+S09;solde;Transactions récentes;Recent transactions;Last transaction dem;M;Golle ceede ɓooyaani;B;Alôm mone ya ndé;B;;;;;;;;;;;;;;;;;;;;;
+S10;solde;Paiement marchand;Merchant payment;Pay fo shop;M;Njoɓdi jeeyoowo;M;Ave mone ya nkus;B;;;;;;;;;;;;;;;;;;;;;transaction
+S11;solde;Salaire reçu;Salary received;Salary don enter;M;Njoɓdi golle heɓaama;M;Mone ma esaé, ma kos;B;;;;;;;;;;;;;;;;;;;;;transaction
+S12;solde;Transfert reçu;Transfer received;Moni weh dem send yu don enter;M;Ceede neldaaɗe heɓaama;M;Mone ba lôm, ma kos;B;;;;;;;;;;;;;;;;;;;;;transaction
+S13;solde;Facture électricité;Electricity bill;Light bill;H;Faktir kuuraŋ;M;Faktir ya kuran;B;;;;;;;;;;;;;;;;;;;;;transaction
+# --- PANNEAU LATERAL (toutes les pages) ---;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+L01;lateral;Sécurité;Security;Security;H;Kisal;H;Mvoé;B;;;;;;;;;;;;;;;;;;;;;
+L02;lateral;Vérifiez toujours le nom et le numéro du bénéficiaire avant de confirmer un transfert.;Always verify the beneficiary name and number before confirming a transfer.;Always check di name an di number fo di pesin weh go receive before yu confirm send moni.;M;Ƴeew innde e limre telefon heɓoowo tun hade maa tabbitinde nelde ceede.;M;Yen mbembe dzoé a nombre fôn ya mod a kos, ôsusua ô ne yebe alôm mone.;B;;;;;;;;;;;;;;;;;;;;;AVERTISSEMENT SECURITE : ne pas affaiblir
+L03;lateral;Connexion sécurisée;Secure connection;Connection weh e safe;M;Jokkondiral kisal;B;Konekson ya mvoé;B;;;;;;;;;;;;;;;;;;;;;
+# --- ETAPE 2 : FRAIS ---;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+F01;frais;Frais de transfert;Transfer fees;Charges fo send moni;M;Njoɓdi nelde ceede;M;Fre ya alôm mone;B;;;;;;;;;;;;;;;;;;;;;
+F02;frais;Choisissez le type de transfert et le montant. Les frais sont calculés automatiquement.;Choose the transfer type and amount. Fees are calculated automatically.;Choose how yu wan send an how much. Dem go count di charges by demsef.;M;Suɓo noone nelde e limre ceede. Njoɓdi ndi hiisetee e hoore mum.;M;Fas ayon ya alôm mone ai mone wa ye lôm. Fre ya ne kalekulé ôngô.;B;;;;;;;;;;;;;;;;;;;;;
+F03;frais;Type d'opération;Operation type;Which kind send;M;Noone golle;M;Ayon ya alôm;B;;;;;;;;;;;;;;;;;;;;;
+F04;frais;Compte Safinum;Safinum account;Safinum account;H;Konte Safinum;H;Kônte Safinum;M;;;;;;;;;;;;;;;;;;;;;option de la liste : traduire le texte affiché, jamais la valeur interne
+F05;frais;Transfert instantané et gratuit;Instant, free transfer;Send quick-quick an free;M;Nelde ceede ngam jooni, meere;M;Alôm mone avôl, zezé;B;;;;;;;;;;;;;;;;;;;;;
+F06;frais;Mobile Money;Mobile Money;Mobile Money;H;Mobile Money;H;Mobile Money;H;;;;;;;;;;;;;;;;;;;;;nom de service : ne pas traduire
+F07;frais;Frais de 1,5 % (min. 100 FCFA, max. 2 500 FCFA);1.5% fee (min. 100 FCFA, max. 2,500 FCFA);Charges na 1,5 % (min. 100 FCFA, max. 2 500 FCFA);M;Njoɓdi 1,5 % (min. 100 FCFA, max. 2 500 FCFA);M;Fre 1,5 % (min. 100 FCFA, max. 2 500 FCFA);M;;;;;;;;;;;;;;;;;;;;;CHIFFRES CONSERVES A L'IDENTIQUE
+F08;frais;Autre banque;Other bank;Oda bank;M;Banki goɗɗo;M;Banki mfé;B;;;;;;;;;;;;;;;;;;;;;option de la liste
+F09;frais;Frais de 2 % (min. 200 FCFA, max. 5 000 FCFA);2% fee (min. 200 FCFA, max. 5,000 FCFA);Charges na 2 % (min. 200 FCFA, max. 5 000 FCFA);M;Njoɓdi 2 % (min. 200 FCFA, max. 5 000 FCFA);M;Fre 2 % (min. 200 FCFA, max. 5 000 FCFA);M;;;;;;;;;;;;;;;;;;;;;CHIFFRES CONSERVES A L'IDENTIQUE
+F10;frais;Montant à envoyer;Amount to send;How much yu wan send;M;Limre ceede nelateeɗe;M;Mone wa ye lôm;B;;;;;;;;;;;;;;;;;;;;;
+F11;frais;Frais;Fee;Charges;M;Njoɓdi;M;Fre;B;;;;;;;;;;;;;;;;;;;;;
+F12;frais;Gratuit;Free;Free;H;Meere;M;Zezé;M;;;;;;;;;;;;;;;;;;;;;badge
+F13;frais;Total à débiter;Total to debit;All moni weh dem go comot;M;Fuu ko ittetee e konte;M;Mone mese ba ye nyoñ;B;;;;;;;;;;;;;;;;;;;;;
+F14;frais;Solde après opération;Balance after transfer;Moni weh go remain afta;M;Ceede keddiiɗe caggal nelde;M;Mone ma tabe ômbus alôm;B;;;;;;;;;;;;;;;;;;;;;
+# --- BOUTONS COMMUNS ---;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+B01;boutons;Continuer;Continue;Continue;H;Jokku;M;Kele ôsu;B;;;;;;;;;;;;;;;;;;;;;
+B02;boutons;Retour;Back;Go back;H;Rutto;M;Kele mbus;B;;;;;;;;;;;;;;;;;;;;;
+B03;boutons;Modifier;Edit;Change am;M;Waylu;M;Modifié;B;;;;;;;;;;;;;;;;;;;;;emprunt au français, à remplacer si un locuteur propose mieux
+B04;boutons;Fermer;Dismiss;Close;H;Uddu;M;Dibi;B;;;;;;;;;;;;;;;;;;;;;aussi utilisé comme aria-label du bouton X des alertes
+# --- ETAPE 3 : BENEFICIAIRE ---;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+N01;beneficiaire;Bénéficiaire;Beneficiary;Pesin weh go receive;M;Heɓoowo;M;Mod a kos;B;;;;;;;;;;;;;;;;;;;;;
+N02;beneficiaire;Renseignez les informations du destinataire. Vérifiez toujours le numéro avant de valider.;Enter the recipient details. Always verify the number before confirming.;Put di info fo di pesin weh go receive. Always check di number before yu confirm.;M;Winndu habaruuji heɓoowo. Ƴeew limre ndee tun hade maa tabbitinde.;M;Tili mam me mod a kos. Yen mbembe nombre ôsusua ô ne yebe.;B;;;;;;;;;;;;;;;;;;;;;
+N03;beneficiaire;Ce bénéficiaire n'a jamais été utilisé sur ce compte. Vérifiez le numéro avant de continuer.;This beneficiary has never been used on this account. Verify the number before continuing.;Yu neva use dis pesin fo dis account before. Check di number before yu continue.;M;Heɓoowo oo huutoraaka e konte ndee haa jooni. Ƴeew limre ndee tun hade maa jokkude.;M;Mod nyi a ngé kos mone ya kônte ji. Yen mbembe nombre ôsusua ô ne kele ôsu.;B;;;;;;;;;;;;;;;;;;;;;AVERTISSEMENT SECURITE
+N04;beneficiaire;Nom du bénéficiaire;Beneficiary name;Name fo di pesin weh go receive;M;Innde heɓoowo;M;Dzoé ya mod a kos;B;;;;;;;;;;;;;;;;;;;;;libellé
+N05;beneficiaire;Numéro de téléphone;Phone number;Phone number;H;Limre telefon;M;Nombre fôn;B;;;;;;;;;;;;;;;;;;;;;libellé
+N06;beneficiaire;Motif du transfert;Transfer reason;Wetin make yu di send moni;M;Sabaabu nelde ceede;M;Amu ya alôm mone;B;;;;;;;;;;;;;;;;;;;;;libellé (le contenu du champ ne se traduit PAS)
+N07;beneficiaire;Note (optionnel);Note (optional);Note (if yu want);M;Binndol (to a yiɗii);M;Atili (nge wa yi);B;;;;;;;;;;;;;;;;;;;;;libellé
+N08;beneficiaire;J'ai vérifié le nom et le numéro du bénéficiaire.;I have verified the beneficiary name and phone number.;Ah don check di name an di number fo di pesin weh go receive.;M;Mi ƴeewii innde e limre telefon heɓoowo.;M;Ma mana yen dzoé a nombre fôn ya mod a kos.;B;;;;;;;;;;;;;;;;;;;;;case à cocher
+# --- ETAPE 4 : RECAPITULATIF ---;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+R01;recapitulatif;Récapitulatif;Summary;Check all tin;M;Ƴeewaa fuu;B;Yen bisë;B;;;;;;;;;;;;;;;;;;;;;
+R02;recapitulatif;Vérifiez les informations avant de confirmer le transfert.;Check the details before confirming the transfer.;Check all di info before yu confirm send moni.;M;Ƴeew habaruuji ɗii tun hade maa tabbitinde nelde ceede.;M;Yen mbembe mam mese ôsusua ô ne yebe alôm mone.;B;;;;;;;;;;;;;;;;;;;;;
+R03;recapitulatif;Montant;Amount;How much;M;Limre ceede;M;Mone;B;;;;;;;;;;;;;;;;;;;;;
+R04;recapitulatif;Frais;Fee;Charges;M;Njoɓdi;M;Fre;B;;;;;;;;;;;;;;;;;;;;;
+R05;recapitulatif;Total débité;Total debited;All moni weh dem don comot;M;Fuu ko ittaa;M;Mone mese ba nyoñ;B;;;;;;;;;;;;;;;;;;;;;
+R06;recapitulatif;Bénéficiaire;Beneficiary;Pesin weh go receive;M;Heɓoowo;M;Mod a kos;B;;;;;;;;;;;;;;;;;;;;;
+R07;recapitulatif;Téléphone;Phone;Phone;H;Telefon;H;Fôn;B;;;;;;;;;;;;;;;;;;;;;
+R08;recapitulatif;Référence;Reference;Reference;H;Referaans;B;Referans;B;;;;;;;;;;;;;;;;;;;;;emprunt au français
+R09;recapitulatif;Opération;Operation;Kind send;M;Golle;B;Ayon ya alôm;B;;;;;;;;;;;;;;;;;;;;;
+R10;recapitulatif;Je confirme que les informations ci-dessus sont correctes.;I confirm the information above is correct.;Ah confirm say all di info fo up na correct.;M;Mi tabbitinii habaruuji dow ɗii ko goonga.;M;Ma yebe na mam me yôp me ne benya.;B;;;;;;;;;;;;;;;;;;;;;case à cocher
+R11;recapitulatif;Confirmer le transfert;Confirm transfer;Confirm send moni;M;Tabbitin nelde ceede;M;Yebe alôm mone;B;;;;;;;;;;;;;;;;;;;;;BOUTON CRITIQUE : doit dire « confirmer », jamais « annuler »
+# --- ETAPE 5 : RECU ---;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+C01;recu;Transfert effectué;Transfer completed;Moni don go;M;Nelde ceede gasii;M;Alôm mone a mana;B;;;;;;;;;;;;;;;;;;;;;
+C02;recu;Votre transfert a été envoyé avec succès.;Your transfer has been sent successfully.;Yu moni don send fine.;M;Ceede maa nelaama no feewi.;M;Mone wôé ma ke mbembe.;B;;;;;;;;;;;;;;;;;;;;;
+C03;recu;Statut;Status;How e stand;M;Ngonka;B;Statu;B;;;;;;;;;;;;;;;;;;;;;
+C04;recu;Succès;Success;E don wok;M;Moƴƴi;M;Mbembe;M;;;;;;;;;;;;;;;;;;;;;
+C05;recu;Nouveau transfert;New transfer;Send oda moni;M;Nelde ceede kesre;M;Alôm mone mfefé;B;;;;;;;;;;;;;;;;;;;;;bouton
+# --- ALERTES ET ERREURS ---;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+A01;alertes;Une erreur est survenue;An error occurred;Problem don happen;M;Juumre waɗii;M;Dzam abë dzi ne bo;B;;;;;;;;;;;;;;;;;;;;;titre erreur
+A02;alertes;Alerte de sécurité;Security warning;Warning fo security;M;Reentino — kisal;M;Yen mbembe! — Mvoé;B;;;;;;;;;;;;;;;;;;;;;titre alerte
+A03;alertes;Le montant doit être supérieur à zéro.;The amount must be greater than zero.;Di moni must pass 0.;M;Limre ceede ndee foti ɓurde 0.;M;Mone ma yiane lôt 0.;B;;;;;;;;;;;;;;;;;;;;;code AMOUNT_001
+A04;alertes;Solde insuffisant pour effectuer ce transfert.;Insufficient balance for this transfer.;Yu moni no reach fo dis send.;M;Ceede maa yonaa ngam nelde ndee.;M;Mone wôé ma ne ki tegé ase alôm nyi.;B;;;;;;;;;;;;;;;;;;;;;code AMOUNT_002
+A05;alertes;Veuillez renseigner le nom et le numéro du bénéficiaire.;Please provide the beneficiary name and phone number.;Put di name an di number fo di pesin weh go receive.;M;Winndu innde e limre telefon heɓoowo.;M;Tili dzoé a nombre fôn ya mod a kos.;B;;;;;;;;;;;;;;;;;;;;;code BENEFICIARY_001
+A06;alertes;Alerte de sécurité : vérifiez le numéro du bénéficiaire avant de continuer.;Security warning: verify the beneficiary phone number before continuing.;Warning fo security: check di number fo di pesin weh go receive before yu continue.;M;Reentino kisal: ƴeew limre telefon heɓoowo tun hade maa jokkude.;M;Yen mbembe: yen nombre fôn ya mod a kos ôsusua ô ne kele ôsu.;B;;;;;;;;;;;;;;;;;;;;;code SECURITY_001 - AVERTISSEMENT SECURITE
+A07;alertes;Alerte de sécurité : ce bénéficiaire n'a jamais été utilisé sur ce compte.;Security warning: this beneficiary has never been used on this account.;Warning fo security: yu neva use dis pesin fo dis account before.;M;Reentino kisal: heɓoowo oo huutoraaka e konte ndee haa jooni.;M;Yen mbembe: mod nyi a ngé kos mone ya kônte ji.;B;;;;;;;;;;;;;;;;;;;;;code SECURITY_002 - AVERTISSEMENT SECURITE
+A08;alertes;Erreur réseau : le service est temporairement indisponible. Réessayez.;Network error: the service is temporarily unavailable. Please try again.;Network problem: di service no di wok now. Try again.;M;Juumre reso: sarwis oo heɓataake jooni. Fuɗɗito kadi.;M;Reso ane ki mbembe: sarvis a ne ki tegé. Bulan bo fe.;B;;;;;;;;;;;;;;;;;;;;;code NETWORK_001
+A09;alertes;Vous devez confirmer les informations avant de valider le transfert.;You must confirm the details before validating the transfer.;Yu must confirm di info before yu validate di send.;M;A foti tabbitinde habaruuji ɗii hade maa jaɓde nelde ceede.;M;Wa yiane yebe mam mese ôsusua ô ne lôm mone.;B;;;;;;;;;;;;;;;;;;;;;code CONFIRM_001
+A10;alertes;Message important;Important message;Important message;H;Habaru teeŋtuɗo;B;Nkobô a ne ngul;B;;;;;;;;;;;;;;;;;;;;;titre de l'encadré du jury (le texte dessous est INCONNU à l'avance)
+# --- DATES ---;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+D01;dates;nov.;Nov;nov.;H;nov.;H;nov.;H;;;;;;;;;;;;;;;;;;;;;mois laissés tels quels (comme les nombres)
+D02;dates;oct.;Oct;oct.;H;oct.;H;oct.;H;;;;;;;;;;;;;;;;;;;;;mois laissés tels quels (comme les nombres)
+# --- VOCABULAIRE CLE (glossaire pour les messages inédits du jury) ---;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+V01;glossaire;envoyer;send;send;H;neldude;M;lôm;M;;;;;;;;;;;;;;;;;;;;;
+V02;glossaire;confirmer;confirm;confirm;H;tabbitinde;M;yebe;B;;;;;;;;;;;;;;;;;;;;;ne jamais confondre avec annuler
+V03;glossaire;annuler;cancel;cancel;H;haɓɓitde;B;A VALIDER;B;;;;;;;;;;;;;;;;;;;;;inconnu en beti-fang : demander à un locuteur
+V04;glossaire;valider;validate;validate;M;jaɓde;M;yebe;B;;;;;;;;;;;;;;;;;;;;;
+V05;glossaire;vérifier;verify;check;H;ƴeewde;M;yen mbembe;B;;;;;;;;;;;;;;;;;;;;;
+V06;glossaire;transfert;transfer;send moni;H;nelde ceede;M;alôm mone;B;;;;;;;;;;;;;;;;;;;;;
+V07;glossaire;compte;account;account;H;konte;M;kônte;B;;;;;;;;;;;;;;;;;;;;;
+V08;glossaire;solde;balance;moni weh e remain;M;ceede keddiiɗe;M;mone ma tabe;B;;;;;;;;;;;;;;;;;;;;;
+V09;glossaire;montant;amount;how much;M;limre ceede;M;mone;B;;;;;;;;;;;;;;;;;;;;;
+V10;glossaire;frais;fee / fees;charges;M;njoɓdi;M;fre;B;;;;;;;;;;;;;;;;;;;;;
+V11;glossaire;total;total;all;H;fuu;M;mese;B;;;;;;;;;;;;;;;;;;;;;
+V12;glossaire;débiter / débité;debit / debited;comot;M;ittude e konte;M;nyoñ;B;;;;;;;;;;;;;;;;;;;;;
+V13;glossaire;bénéficiaire;beneficiary;pesin weh go receive;M;heɓoowo;M;mod a kos;B;;;;;;;;;;;;;;;;;;;;;
+V14;glossaire;destinataire;recipient;pesin weh go receive;M;heɓoowo;M;mod a kos;B;;;;;;;;;;;;;;;;;;;;;
+V15;glossaire;numéro;number;number;H;limre;M;nombre;B;;;;;;;;;;;;;;;;;;;;;
+V16;glossaire;téléphone;phone;phone;H;telefon;H;fôn;B;;;;;;;;;;;;;;;;;;;;;
+V17;glossaire;référence;reference;reference;H;referaans;B;referans;B;;;;;;;;;;;;;;;;;;;;;
+V18;glossaire;opération;operation;kind send;M;golle;B;ayon ya alôm;B;;;;;;;;;;;;;;;;;;;;;
+V19;glossaire;paiement;payment;pay;H;njoɓdi;M;ave mone;B;;;;;;;;;;;;;;;;;;;;;
+V20;glossaire;facture;bill;bill;H;faktir;M;faktir;B;;;;;;;;;;;;;;;;;;;;;
+V21;glossaire;salaire;salary;salary;H;njoɓdi golle;M;mone ma esaé;B;;;;;;;;;;;;;;;;;;;;;
+V22;glossaire;banque;bank;bank;H;banki;H;banki;M;;;;;;;;;;;;;;;;;;;;;
+V23;glossaire;sécurité;security;security;H;kisal;H;mvoé;B;;;;;;;;;;;;;;;;;;;;;
+V24;glossaire;alerte;warning / alert;warning;H;reentino;M;yen mbembe;B;;;;;;;;;;;;;;;;;;;;;
+V25;glossaire;erreur;error;problem;M;juumre;M;dzam abë;B;;;;;;;;;;;;;;;;;;;;;
+V26;glossaire;réseau;network;network;H;reso;M;reso;B;;;;;;;;;;;;;;;;;;;;;
+V27;glossaire;insuffisant;insufficient;no reach;M;yonaa;M;ne ki tegé;B;;;;;;;;;;;;;;;;;;;;;
+V28;glossaire;gratuit;free;free;H;meere;M;zezé;M;;;;;;;;;;;;;;;;;;;;;
+V29;glossaire;succès;success;e don wok;M;moƴƴi;M;mbembe;M;;;;;;;;;;;;;;;;;;;;;
+V30;glossaire;réessayer;try again;try again;H;fuɗɗito;M;bulan bo fe;B;;;;;;;;;;;;;;;;;;;;;
+V31;glossaire;code PIN / mot de passe;PIN / password;PIN / password;H;PIN / konngol suturo;B;PIN;B;;;;;;;;;;;;;;;;;;;;;
+V32;glossaire;ne communiquez jamais;never share;no give am to nobody;M;taa hokku hay gooto;M;A VALIDER;B;;;;;;;;;;;;;;;;;;;;;probable dans un message inédit (arnaques)
+V33;glossaire;client(s);customer(s);customer;H;soodoowo / soodooɓe;M;kliyan;B;;;;;;;;;;;;;;;;;;;;;
+# --- EXTENSION : MESSAGES INEDITS NON TRADUITS (affichés par l'extension) ---;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+U01;extension;Non traduit — mots clés expliqués :;Not translated — key words explained:;No translate yet — big word dem explain fo bracket:;B;Ɓe firaay ɗum tawon — konnguɗi mawɗi ɗi firaama:;B;Ba ngé ki kobola — mbembe bifia bi nga kobola:;B;;;;;;;;;;;;;;;;;;;;;préfixe ajouté devant un message inédit ; « : » final conservé
+U02;extension;Attention : message de sécurité non traduit. Demandez de l'aide avant de continuer.;Warning: security message not translated. Ask for help before you continue.;Tek kia: security message weh dem neva translate. Ask pesin fo help before yu continue.;M;Reentino: habaru kisal ɓe firaay. Naamno ballal hade a jokka.;B;Yen mbembe: kalara mvoé ba ngé ki kobola. Sili mod a vole wo ôsusua ô ne kele ôsu.;B;;;;;;;;;;;;;;;;;;;;;CRITIQUE : affiché devant un message inédit qui parle de code, mot de passe, fraude, compte bloqué…
+# --- NE JAMAIS TRADUIRE (à protéger dans l'extension) ---;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+X01;protege;Safinum Pay;Safinum Pay;NE PAS TRADUIRE;;NE PAS TRADUIRE;;NE PAS TRADUIRE;;;;;;;;;;;;;;;;;;;;;;nom de marque
+X02;protege;Amina Ngo Bell / Amina / AN;Amina Ngo Bell / Amina / AN;NE PAS TRADUIRE;;NE PAS TRADUIRE;;NE PAS TRADUIRE;;;;;;;;;;;;;;;;;;;;;;nom de l'utilisateur
+X03;protege;Jean-Paul Mbarga;Jean-Paul Mbarga;NE PAS TRADUIRE;;NE PAS TRADUIRE;;NE PAS TRADUIRE;;;;;;;;;;;;;;;;;;;;;;nom du bénéficiaire (vérifié par le jury)
+X04;protege;+237 6 99 12 34 56;+237 6 99 12 34 56;NE PAS TRADUIRE;;NE PAS TRADUIRE;;NE PAS TRADUIRE;;;;;;;;;;;;;;;;;;;;;;téléphone (vérifié par le jury)
+X05;protege;CM 001 2345 6789 01;CM 001 2345 6789 01;NE PAS TRADUIRE;;NE PAS TRADUIRE;;NE PAS TRADUIRE;;;;;;;;;;;;;;;;;;;;;;numéro de compte
+X06;protege;SAF-2026-XXXXXX;SAF-2026-XXXXXX;NE PAS TRADUIRE;;NE PAS TRADUIRE;;NE PAS TRADUIRE;;;;;;;;;;;;;;;;;;;;;;référence aléatoire (vérifiée par le jury)
+X07;protege;tous les montants « … FCFA »;all amounts « … FCFA »;NE PAS TRADUIRE;;NE PAS TRADUIRE;;NE PAS TRADUIRE;;;;;;;;;;;;;;;;;;;;;;ni le nombre, ni « FCFA »
+X08;protege;AMOUNT_001, SECURITY_001, NETWORK_001…;same;NE PAS TRADUIRE;;NE PAS TRADUIRE;;NE PAS TRADUIRE;;;;;;;;;;;;;;;;;;;;;;codes d'erreur
+X09;protege;contenu des champs (Paiement de services, note…);field contents;NE PAS TRADUIRE;;NE PAS TRADUIRE;;NE PAS TRADUIRE;;;;;;;;;;;;;;;;;;;;;;données saisies, vérifiées par le jury
+X10;protege;EN / FR;EN / FR;NE PAS TRADUIRE;;NE PAS TRADUIRE;;NE PAS TRADUIRE;;;;;;;;;;;;;;;;;;;;;;bouton de langue
