@@ -8,7 +8,7 @@ Extension de navigateur qui prépare un sélecteur de **13 langues** (les trois 
 |---|---|
 | `PRESELECTION EPREUVE SAFINUM INNOVATE CHALLENGE Fr.pdf` | Énoncé officiel de l'épreuve de présélection |
 | `liste_mots_a_traduire.csv` | Textes de l'environnement de test, en FR / EN et 13 colonnes de langues; les dix nouvelles colonnes restent vides et en attente de validation |
-| `extension/` | Extension Chrome « Safinum Lingua » (Manifest V3) : dictionnaire généré depuis le CSV, protection des valeurs financières, lecture vocale, traduction IA facultative des messages inédits |
+| `extension/` | Extension Chrome « Safinum Lingua » (Manifest V3) : dictionnaire généré depuis le CSV, protection des valeurs financières, lecture vocale et traitements locaux; aucun texte affiché n'est envoyé à un service externe |
 | `spending-pal/` | Copie du dépôt Flutter [`yohanangulo/spending-pal`](https://github.com/yohanangulo/spending-pal), intégrée comme sous-dossier ; provenance et commit source dans `spending-pal/SOURCE_REPO.md` |
 | `docs/AUDIO_ET_LIMITES.md` | État des phrases audio, modèles, variétés et licences vérifiés |
 | `audio_samples/README.md` | Explique pourquoi aucun échantillon synthétique non validé n'est inclus |
@@ -28,6 +28,8 @@ Prototype fonctionnel qui doit :
 Livrables : description, prototype, vidéo ≤ 3 min, note technique (architecture, intégration, dépendances, limites), langues prises en charge + méthode de validation linguistique.
 
 ## Environnement de test : https://safinum.cm/hackathon-test
+
+Le [guide officiel SAFINUM](https://safinum.cm/hackathon-test/guide) demande de tester la page normale, sans API ou hook dédié, avec du contenu dynamique. Utilisez uniquement des données fictives, ne modifiez pas le code de la page et ne transmettez pas son contenu; montants, frais, devise, noms, numéros et références doivent rester inchangés.
 
 Application Vue.js « Safinum Pay », bascule FR/EN, 5 étapes :
 
@@ -72,7 +74,7 @@ Qualité linguistique vérifiée à part. Défauts majeurs : contresens sur une 
 
 ## Les 13 langues et l'état réel des ressources
 
-Les choix sont **pidgin camerounais, Fulfulde, Ewondo, Makaa, Kanuri, Arabe Choa/Shuwa, Masa, Bafia, Tupuri, Basaa, Duala, Yemba et Mafa**. **Bekwil est écarté.** Les trois premières ont des traductions dans le CSV, mais ce sont des brouillons. Les dix suivantes ont des colonnes vides, sont marquées « traductions à faire » et restent inchangées à l'écran; l'IA est désactivée pour elles. Les montants, devises, numéros, références et variables financières ne sont pas générés ni altérés.
+Les choix sont **pidgin camerounais, Fulfulde, Ewondo, Makaa, Kanuri, Arabe Choa/Shuwa, Masa, Bafia, Tupuri, Basaa, Duala, Yemba et Mafa**. **Bekwil est écarté.** Les trois premières ont des traductions dans le CSV, mais ce sont des brouillons non approuvés. Les dix nouvelles langues apparaissent dans le sélecteur, avec des colonnes vides et le statut « à traduire »; le texte de page reste donc dans sa langue d'origine quand l'une d'elles est choisie. L'extension n'utilise plus de traduction distante et n'envoie aucun texte affiché. Les montants, devises, numéros, références et variables financières ne sont pas générés ni altérés.
 
 | Langue et code ISO 639-3 | Traductions dans l'extension | Ressources vocales publiques et limites |
 |---|---|---|
@@ -100,13 +102,13 @@ Pour la phrase **« Bienvenue sur SAFINUM. »**, aucune source consultée ne per
 
 Survoler un texte déjà traduit fait apparaître un bouton 🔊 (ou **Alt+L** sur l'élément qui a le focus, **Échap** pour arrêter); le texte lu est surligné. Un enregistrement de locuteur natif est joué s'il existe (`extension/audio/<langue>/<id>.<ext>`). Sinon, seule une voix système locale dont le code correspond exactement à la langue choisie est acceptée. **Aucune voix française ou anglaise ne remplace une langue locale**; si aucun enregistrement ou aucune voix exacte n'existe, la lecture est signalée comme indisponible. Les modèles mentionnés dans le tableau ne comptent pas comme intégrés.
 
-Les options permettent de régler le débit et signalent si une voix locale de code exact ou un enregistrement natif est disponible. Les voix « en ligne » restent exclues : aucun texte lu n'est envoyé à un service externe. Le choix de langue indique si les traductions sont des brouillons ou encore absentes. La traduction IA, lorsqu'elle est activée pour l'une des trois langues historiques, reste également non validée; elle est désactivée pour les dix langues sans données.
+Les options permettent de régler le débit et signalent si une voix locale de code exact ou un enregistrement natif est disponible. Les voix « en ligne » sont exclues. Le sélecteur indique si les traductions sont des brouillons ou encore absentes. Les messages inédits ne partent pas vers un service de traduction; lorsqu'ils ne peuvent pas être aidés par le lexique hors ligne, ils restent signalés comme non traduits.
 
 Enregistrements actuellement intégrés : Fulfulde S02 (Sannu), F12 (Meere); Ewondo F12 (Zezé) — crédits et licences dans `extension/audio/CREDITS.md`. Pour en ajouter : fenêtre de l'extension → **🎙 Enregistrer les mots**. La page ne propose que les textes déjà présents dans le CSV; les dix langues sans traductions indiquent pourquoi aucune prise n'est encore disponible. Les fichiers restent locaux jusqu'à ce qu'un propriétaire les ajoute au dépôt.
 
 ## Installer l'extension
 
-Le même dossier `extension/` est prévu pour les navigateurs ci-dessous. Les instructions indiquent comment le charger localement; le parcours complet du site de démonstration n'a pas été revalidé pour cette mise à jour.
+Le même dossier `extension/` est prévu pour les navigateurs ci-dessous. Les instructions indiquent comment le charger localement. Pour cette mise à jour, la page normale SAFINUM a été testée avec l'extension chargée : sélecteur des langues, écrans de solde et de frais, et bascule dynamique FR/EN. Aucun transfert n'a été soumis.
 
 | Navigateur | Installation |
 |---|---|
@@ -120,7 +122,7 @@ Puis ouvrir https://safinum.cm/hackathon-test : le sélecteur 🌍 apparaît en 
 
 ### Contrôles exécutés pour cette mise à jour
 
-La génération du dictionnaire, le test `python3 extension/tools/test_language_matrix.py`, la syntaxe JavaScript des scripts vérifiés, la compilation syntaxique Python et `git diff --check` ont réussi. Le test automatique vérifie les 13 choix, les dix colonnes vides, l'absence de traduction IA dans ces langues, le statut brouillon des trois langues existantes, l'exclusion des lignes financières/date protégées et l'absence de voix de remplacement. Un smoke test Chromium sur une fixture locale a aussi confirmé 13 options, la sélection de Makaa, le maintien du texte source et l'intégrité du montant et du champ de saisie. Le parcours complet du site réel n'a pas été vérifié; les tests Flutter n'ont pas été exécutés et aucun fichier Flutter n'a été modifié.
+La génération du dictionnaire, le test `python3 extension/tools/test_language_matrix.py`, la syntaxe JavaScript des scripts vérifiés, la compilation syntaxique Python et `git diff --check` ont réussi. Le test automatique vérifie les 13 choix, les dix colonnes vides, l'absence de traduction IA dans ces langues, le statut brouillon des trois langues existantes, l'exclusion des lignes financières/date protégées et l'absence de voix de remplacement. Un smoke test Chromium sur une fixture locale a confirmé 13 options, la sélection de Makaa, le maintien du texte source et l'intégrité du montant et du champ de saisie. Un second test Chromium a chargé l'extension sur la page normale SAFINUM : les dix nouvelles sélections ont toutes signalé honnêtement l'absence de traduction et conservé sans changement le texte de la page en français, en anglais et sur l'écran de frais; les montants, FCFA et le numéro de compte sont restés intacts. Le bac formate de lui-même les séparateurs de milliers différemment en anglais (espace fine en français, virgule en anglais), sans changer la valeur numérique. Aucun transfert n'a été soumis. Le parcours de bénéficiaire/confirmation et les tests Flutter n'ont pas été exécutés; aucun fichier Flutter n'a été modifié.
 
 - **Voix :** seuls les enregistrements natifs ou une voix système locale de code exact sont utilisés. Firefox utilise directement les voix du système, sans option. Opera sous Linux n'a pas de synthèse vocale : seuls les enregistrements de locuteurs natifs y sont lus.
 - **Téléphone :** Chrome pour Android n'accepte pas les extensions. Firefox pour Android les accepte, mais l'extension n'y a pas été testée.

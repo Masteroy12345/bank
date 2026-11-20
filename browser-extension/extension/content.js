@@ -10,7 +10,7 @@
   // Langues = colonnes du CSV (voir tools/build_dictionary.py)
   const LANGS = Object.fromEntries(DICT.languages.map((l) => [l.code, l]));
   const FIRST = DICT.languages[0]?.code;
-  const DEFAULTS = { lang: FIRST, sites: { "safinum.cm": true }, ai: false, tooltip: true, voice: true, rate: 1 };
+  const DEFAULTS = { lang: FIRST, sites: { "safinum.cm": true }, tooltip: true, voice: true, rate: 1 };
 
   let settings = { ...DEFAULTS };
   let active = false;
@@ -147,7 +147,6 @@
     // Texte inédit (message ajouté par le service ou par le jury) : aide hors ligne
     const unseen = orig.trim().split(/\s+/).length >= 3 ? translateUnseen(orig.trim()) : null;
     if (unseen) setText(node, orig, unseen.text, null, "", unseen.label);
-    if (settings.ai) queueAI(node, orig);
   }
 
   // ---------- Contenu inédit, sans IA ni réseau ----------
@@ -341,90 +340,6 @@
     observer.disconnect();
     dirty.clear();
     restoreAll();
-  }
-
-  // ---------- Traduction IA (facultative) des contenus inédits ----------
-  const aiCache = new Map(); // `${lang}|${texte}` -> traduction | null (échec)
-  const aiQueue = new Map(); // texte -> Set(nodes)
-  let aiTimer = null;
-
-  function queueAI(node, orig) {
-    if (!LANGS[settings.lang]?.allowAI) return;
-    const text = orig.trim();
-    if (text.split(/\s+/).length < 2 || text.length < 8) return;
-    const cached = aiCache.get(`${settings.lang}|${text}`);
-    if (cached) return setText(node, orig, cached);
-    if (cached === null) return;
-    if (!aiQueue.has(text)) aiQueue.set(text, new Set());
-    aiQueue.get(text).add(node);
-    clearTimeout(aiTimer);
-    aiTimer = setTimeout(flushAI, 400);
-  }
-
-  // Remplace chiffres, montants, références, codes et noms par ⟦n⟧ avant l'envoi.
-  function mask(text) {
-    const kept = [];
-    const put = (m) => {
-      kept.push(m);
-      return `⟦${kept.length - 1}⟧`;
-    };
-    let out = text
-      .replace(/\b[A-Z]{2,6}-\d{4}-[A-Z0-9]{4,}\b/g, put)
-      .replace(/\b[A-Z]+_\d{3}\b/g, put)
-      .replace(/\+?\d(?:[\d.,]|[\s  ](?=\d))*(?:\s?(?:FCFA|XAF))?(?:\s?%)?/g, put)
-      .replace(/\b[A-Z]{2,}\b/g, put)
-      .replace(/\p{Lu}[\p{Ll}'’-]+(?:[\s-]\p{Lu}[\p{Ll}'’-]+)+/gu, put);
-    // Mot à majuscule au milieu d'une phrase = nom propre probable
-    out = out.replace(/(?<=[\p{Ll},;]\s)\p{Lu}[\p{L}'’-]+/gu, put);
-    return { masked: out, kept };
-  }
-
-  function unmask(translated, kept) {
-    for (let i = 0; i < kept.length; i++) {
-      const tag = `⟦${i}⟧`;
-      if (translated.split(tag).length !== 2) return null; // marqueur perdu ou dupliqué -> rejet
-      translated = translated.replace(tag, () => kept[i]);
-    }
-    return /⟦\d+⟧/.test(translated) ? null : translated;
-  }
-
-  async function flushAI() {
-    const lang = settings.lang;
-    const items = [...aiQueue.entries()].slice(0, 20);
-    items.forEach(([t]) => aiQueue.delete(t));
-    if (aiQueue.size) aiTimer = setTimeout(flushAI, 400);
-    if (!items.length) return;
-
-    const masked = items.map(([t]) => mask(t));
-    const glossary = DICT.glossary.filter((g) => g[lang]).map((g) => `${g.fr} / ${g.en} = ${g[lang]}`);
-    widgetStatus("Traduction IA…");
-    let res;
-    if (!alive()) return becomeOrphan();
-    try {
-      res = await chrome.runtime.sendMessage({
-        type: "sl-translate",
-        lang,
-        langDescription: LANGS[lang].description,
-        texts: masked.map((m) => m.masked),
-        glossary,
-      });
-    } catch (e) {
-      res = { error: String(e) };
-    }
-    if (!res || res.error || !Array.isArray(res.translations) || res.translations.length !== items.length) {
-      widgetStatus(res && res.error === "no-key" ? "IA : clé API manquante" : "IA indisponible");
-      items.forEach(([t]) => aiCache.set(`${lang}|${t}`, null));
-      return;
-    }
-    widgetStatus("Traduction IA provisoire — validation locale requise");
-    items.forEach(([text, nodes], i) => {
-      const t = unmask(res.translations[i], masked[i].kept);
-      aiCache.set(`${lang}|${text}`, t);
-      if (!t || lang !== settings.lang || !active) return;
-      nodes.forEach((node) => {
-        if (node.isConnected && originalOf(node).trim() === text) setText(node, originalOf(node), t);
-      });
-    });
   }
 
   // ---------- Petit sélecteur flottant (Shadow DOM : invisible pour la page) ----------
@@ -715,7 +630,6 @@
     if (siteEnabled() && FIRST) {
       if (active && prevLang && prevLang !== settings.lang) {
         stop();
-        aiQueue.clear();
       }
       start();
     } else stop();

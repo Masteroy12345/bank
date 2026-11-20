@@ -10,6 +10,7 @@ ITEMS_PATH = ROOT / "extension" / "recorder_items.js"
 CONTENT_PATH = ROOT / "extension" / "content.js"
 POPUP_PATH = ROOT / "extension" / "popup.js"
 POPUP_HTML_PATH = ROOT / "extension" / "popup.html"
+MANIFEST_PATH = ROOT / "extension" / "manifest.json"
 EXPECTED = [
     "pidgin", "fulfulde", "ewondo", "makaa", "kanuri", "arabe_choa",
     "masa", "bafia", "toupouri", "basaa", "duala", "yemba", "mafa",
@@ -39,16 +40,15 @@ for code in EXPECTED:
     language = by_code[code]
     assert language["ttsMode"] == "system-exact", f"Foreign-language fallback enabled for {code}"
     assert language["ttsLang"] == language["htmlLang"], f"TTS locale differs from selected language for {code}"
+    assert language["allowAI"] is False, f"External AI must be disabled for {code}"
 for code in EXPECTED[:3]:
     language = by_code[code]
     assert language["translationStatus"] == "draft"
     assert language["entryCount"] > 0
-    assert language["allowAI"] is True
 for code in NEW:
     language = by_code[code]
     assert language["translationStatus"] == "pending"
     assert language["entryCount"] == 0
-    assert language["allowAI"] is False
     assert language["ttsMode"] == "system-exact"
     assert language["htmlLang"]
 for entry in payload["entries"].values():
@@ -68,4 +68,10 @@ assert "exactVoice(lang.htmlLang)" in content
 assert "sourceVoice(seg.lang)" in content
 assert "voiceFr" not in popup and "voiceEn" not in popup
 assert "voice-fr" not in popup_html and "voice-en" not in popup_html
-print("PASS: 13 languages in order; new translations blank; no new AI translation; existing translations remain drafts; protected rows excluded; all playback requires exact-language voices or native recordings.")
+manifest = json.loads(MANIFEST_PATH.read_text(encoding="utf-8"))
+assert "host_permissions" not in manifest, "External host permission remains"
+assert "background" not in manifest, "External translation worker remains enabled"
+assert "anthropic" not in popup.lower() and "anthropic" not in content.lower()
+assert "sendMessage" not in content and "fetch(" not in content and "fetch(" not in popup
+assert 'id="ai"' not in popup_html and 'id="key"' not in popup_html
+print("PASS: 13 language options; ten new columns remain empty/pending; no translation network/API or external host permission; financial/date rows excluded; playback requires exact-language voices or native recordings.")

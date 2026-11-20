@@ -4,7 +4,6 @@ const IS_FIREFOX = /\bFirefox\//.test(navigator.userAgent);
 const DEFAULTS = {
   lang: LANGUAGES[0].code,
   sites: { "safinum.cm": true },
-  ai: false,
   tooltip: true,
   voice: true,
   rate: 1,
@@ -23,6 +22,9 @@ const exactLocalVoice = (code) => {
 };
 
 (async () => {
+  // Retire le réglage et la clé de l'ancien traducteur distant, désormais interdit sur SAFINUM.
+  await chrome.storage.sync.remove("ai");
+  await chrome.storage.local.remove("apiKey");
   for (const language of LANGUAGES) {
     $("lang").append(new Option(language.selectorLabel || language.label, language.code));
   }
@@ -35,7 +37,6 @@ const exactLocalVoice = (code) => {
 
   const saved = await chrome.storage.sync.get(DEFAULTS);
   settings = { ...DEFAULTS, ...saved };
-  const { apiKey = "" } = await chrome.storage.local.get("apiKey");
   $("lang").value = LANGUAGES.some((language) => language.code === settings.lang)
     ? settings.lang
     : DEFAULTS.lang;
@@ -44,9 +45,6 @@ const exactLocalVoice = (code) => {
   );
   $("site").disabled = !host;
   $("tooltip").checked = settings.tooltip;
-  $("ai").checked = settings.ai;
-  $("key").value = apiKey;
-  $("keybox").hidden = !settings.ai;
   $("voice").checked = settings.voice;
   $("voicebox").hidden = !settings.voice;
   $("rate").value = String(settings.rate);
@@ -67,11 +65,6 @@ const exactLocalVoice = (code) => {
     chrome.storage.sync.set({ rate: settings.rate });
   };
   $("tooltip").onchange = () => chrome.storage.sync.set({ tooltip: $("tooltip").checked });
-  $("ai").onchange = () => {
-    $("keybox").hidden = !$("ai").checked;
-    chrome.storage.sync.set({ ai: $("ai").checked });
-  };
-  $("key").onchange = () => chrome.storage.local.set({ apiKey: $("key").value.trim() });
   $("site").onchange = async () => {
     const current = await chrome.storage.sync.get(DEFAULTS);
     const sites = { ...current.sites };

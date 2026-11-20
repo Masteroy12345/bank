@@ -9,7 +9,7 @@ globalThis.SAFINUM_DICT = {
    "ttsLang": "wes",
    "ttsMode": "system-exact",
    "translationStatus": "draft",
-   "allowAI": true,
+   "allowAI": false,
    "ttsResourceInfo": "OmniVoice répertorie wes (10,06 h); poids CC BY-NC, modèle non intégré et qualité locale non validée. Aucun repli vers l'anglais.",
    "entryCount": 113,
    "selectorLabel": "Pidgin camerounais — brouillon à valider"
@@ -22,7 +22,7 @@ globalThis.SAFINUM_DICT = {
    "ttsLang": "fub",
    "ttsMode": "system-exact",
    "translationStatus": "draft",
-   "allowAI": true,
+   "allowAI": false,
    "ttsResourceInfo": "OmniVoice répertorie le Fulfulde d'Adamawa (fub, 13,12 h); poids CC BY-NC, modèle non intégré et qualité locale non validée. Aucun repli vers le français.",
    "entryCount": 113,
    "selectorLabel": "Fulfulde — brouillon à valider"
@@ -35,7 +35,7 @@ globalThis.SAFINUM_DICT = {
    "ttsLang": "ewo",
    "ttsMode": "system-exact",
    "translationStatus": "draft",
-   "allowAI": true,
+   "allowAI": false,
    "ttsResourceInfo": "OmniVoice répertorie ewo (12,71 h); poids CC BY-NC, modèle non intégré et qualité locale non validée. Un enregistrement natif de mot existe; aucun repli vers le français.",
    "entryCount": 111,
    "selectorLabel": "Ewondo — brouillon à valider"

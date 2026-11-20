@@ -13,7 +13,7 @@
     .row label { margin: 0; font-weight: 400; }
     :focus-visible { outline: 3px solid #00BFFF; outline-offset: 2px; }
     .note { font-size: 12px; color: #4b5563; margin-top: 6px; }
-    #keybox[hidden], #voicebox[hidden] { display: none; }
+    #voicebox[hidden] { display: none; }
     kbd { font: 12px ui-monospace, monospace; border: 1px solid #9ca3af; border-radius: 4px; padding: 0 3px; }
     a { color: #1d4ed8; }
   </style>
@@ -48,18 +48,8 @@
       <option value="1.1">Rapide</option>
     </select>
     <p class="note" id="voiceinfo" role="status" aria-live="polite"></p>
-    <p class="note">Aucune voix française ou anglaise de remplacement n'est utilisée pour une langue locale. La lecture utilise seulement un enregistrement natif déjà présent ou une voix système locale dont le code correspond exactement à la langue. Sinon, l'audio est signalé comme indisponible; aucun texte lu n'est envoyé en ligne.</p>
+    <p class="note">Aucune voix française ou anglaise de remplacement n'est utilisée pour une langue locale. La lecture utilise seulement un enregistrement natif déjà présent ou une voix système locale dont le code correspond exactement à la langue. Sinon, l'audio est signalé comme indisponible. Aucun texte affiché n'est envoyé à un service externe.</p>
     <p class="note"><a href="recorder.html" target="_blank">🎙 Enregistrer les mots (locuteurs natifs)</a></p>
-  </div>
-
-  <div class="row">
-    <input type="checkbox" id="ai">
-    <label for="ai">Traduction IA des messages inédits</label>
-  </div>
-  <div id="keybox">
-    <label for="key">Clé API Claude</label>
-    <input type="password" id="key" autocomplete="off" placeholder="sk-ant-…">
-    <p class="note">Seuls les textes inconnus du dictionnaire sont envoyés, après masquage des chiffres, noms et références. La clé reste sur cet ordinateur.</p>
   </div>
 
   <script src="dictionary.js"></script>
